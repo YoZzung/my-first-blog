@@ -1,18 +1,27 @@
 from django.shortcuts import render
+from django.utils import timezone
+from .models import Post
+import requests,json
+from django.http import JsonResponse
 
 #def post_list(request):
 #        return render(request, 'blog/post_list.html', {})
-def ex_css_1(request):
-        return render(request, 'css/ex_css_1.html', {})
-def ex_css_2(request):
-        return render(request, 'css/ex_css_2.html', {})
-def ex_css_3(request):
-        return render(request, 'css/ex_css_3.html', {})
-def index(request):
-        return render(request, 'blog/index.html', {})
-def page_html(request):
-        return render(request, 'blog/page_html.html', {})
-def page_op(request):
-        return render(request, 'blog/page_op.html', {})
-def page_vc(request):
-        return render(request, 'blog/page_vc.html', {})
+
+def pet_ask(request):
+    return render(request, 'blog/pet_ask.html', {})
+def pet_search(request):
+    return render(request, 'blog/pet_search.html', {})
+def pet_sitter(request):
+    return render(request, 'blog/pet_sitter.html', {})
+
+def home(request):
+    #url = 'http://127.0.0.1:7050/registrar'
+    #payload = {
+    #  'enrollId': 'jim',
+    #  'enrollSecret': '6avZQLwcUe9b'
+    #}
+    #headers = {'content-type': 'application/json'}
+    #r = requests.post(url, data=json.dumps(payload), #headers=headers)
+    #print(r.text)
+    return render(request, 'blog/pet_home.html', {})
+    #return JsonResponse(payload)

@@ -1,0 +1,15 @@
+<p>time : <span id="time"></span></p>
+<input type="button" id="execute" value="execute" />
+<script>
+document.querySelector('input').addEventListener('click', function(event){
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'http://127.0.0.1:8000');
+    xhr.onreadystatechange = function(){
+        if(xhr.readyState === 4 && xhr.status === 200){
+          var myArr = JSON.parse(xhr.responseText);
+          document.querySelector('#time').innerHTML = myArr.enrollId;
+        }
+    }
+    xhr.send();
+});
+</script>
