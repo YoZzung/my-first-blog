@@ -4,8 +4,9 @@ from .models import Post
 import requests,json
 from django.http import JsonResponse
 
-#def post_list(request):
-#        return render(request, 'blog/post_list.html', {})
+def post_list(request):
+        posts = Post.objects.order_by('created_date')
+        return render(request, 'blog/post_list.html', {'posts': posts})
 
 def pet_ask(request):
     return render(request, 'blog/pet_ask.html', {})
