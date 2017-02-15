@@ -12,5 +12,6 @@ urlpatterns = [
     url(r'^ab2/$', views.ab, name='about2'),
     url(r'^join/$', views.join, name='join'),
     url(r'^log/$', views.log, name='log'),
-    url(r'^mem_check/$', views.mem_check, name='mem_check')
+    url(r'^mem_check/$', views.mem_check, name='mem_check'),
+    url(r'^mem_join/$', views.mem_join, name='mem_join')
 ]

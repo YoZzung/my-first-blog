@@ -6,6 +6,9 @@ import json
 from django.http import JsonResponse
 from django.http import HttpResponse
 import sqlite3
+from django.contrib.auth.forms import UserCreationForm
+from django.views.generic.edit import CreateView
+from django.contrib.auth.models import User
 
 # def post_list(request):
 #         posts = Post.objects.order_by('created_date')
