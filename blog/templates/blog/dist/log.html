@@ -1,0 +1,114 @@
+{% load staticfiles %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>PetSit</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Loading Bootstrap -->
+    <link href="{% static 'blog/css/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Loading Flat UI -->
+    <link href="{% static 'blog/css/flat-ui.min.css' %}" rel="stylesheet">
+    <link href="{% static 'blog/docs/assets/css/demo.css' %}" rel="stylesheet">
+
+    <link rel="shortcut icon" href="img/favicon.ico">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+    <!--[if lt IE 9]>
+      <script src="js/vendor/html5shiv.js"></script>
+      <script src="js/vendor/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <style>
+      body {
+        min-height: 2000px;
+      }
+
+      .navbar-static-top {
+        margin-bottom: 19px;
+      }
+    </style>
+
+    <!-- Static navbar -->
+    <div class="navbar navbar-default navbar-static-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+          </button>
+          <a class="navbar-brand" href="../ ">PetSit</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../ab" class="btn_help">도움말</a></li>
+            <!-- <li><a href="#about">About</a></li> -->
+
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <!-- <li><a href="../navbar/" class="btn_help">도움말</a></li> -->
+            <!-- <li class="active"><a href="./">회원가입</a></li> -->
+            <li><a href="../join" class="btn_join">회원가입</a></li>
+            <li><a href="../log" class="btn_log">로그인</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Become family<b class="caret"></b></a>
+              <!-- <ul class="dropdown-menu">
+                <li><a href="#">Messages</a></li>
+                <li><a href="#">Calendar</a></li>
+                <li><a href="#">Bookings</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Profile</li>
+                <li><a href="#">My Hosts</a></li>
+                <li><a href="#">Log Out</a></li>
+              </ul> -->
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="login">
+        <div class="login-screen">
+          <div class="login-icon">
+            <img src="{% static 'blog/img/login/icon.png' %}" alt="Welcome to Mail App" />
+            <h4>Welcome to <small>PetSitting</small></h4>
+          </div>
+
+          <div class="login-form">
+            <div class="form-group">
+              <input type="text" class="form-control login-field" value="" placeholder="Enter your e-mail" id="login-name" />
+              <!-- <label class="login-field-icon fui-user" for="login-name"></label> -->
+            </div>
+
+            <div class="form-group">
+              <input type="password" class="form-control login-field" value="" placeholder="Password" id="login-pass" />
+              <!-- <label class="login-field-icon fui-lock" for="login-pass"></label> -->
+            </div>
+
+            <a class="btn btn-primary btn-lg btn-block" href=""  id="login">Log in</a>
+            <a class="login-link" href="#">Lost your password?</a>
+          </div>
+        </div>
+      </div>
+      <!-- post 했던 email pw 출력해보기-->
+      <p> email: <span id="e_mail"></span></p>
+      <p> password: <span id="pw"></span></p>
+    </div>
+
+
+
+    <!-- jQuery (necessary for Flat UI's JavaScript plugins) -->
+    <script src="{% static 'blog/js/vendor/jquery.min.js' %}"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="{% static 'blog/js/vendor/video.js' %}"></script>
+    <script src="{% static 'blog/js/flat-ui.min.js' %}"></script>
+    <script src="{% static 'blog/js/new.js' %}"></script>
+
+    <script>
+
+    </script>
+
+  </body>
+</html>
