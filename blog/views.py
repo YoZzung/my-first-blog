@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.utils import timezone
 from .models import Post
+from .models import PetsitUser
 import requests
 import json
 from django.http import JsonResponse
@@ -20,7 +21,6 @@ from django.contrib.auth.models import User
 #     return render(request, 'blog/pet_search.html', {})
 # def pet_sitter(request):
 #     return render(request, 'blog/pet_sitter.html', {})
-
 def home(request):
     #url = 'http://127.0.0.1:7050/registrar'
     #payload = {
@@ -42,14 +42,38 @@ def ab2(request):
 def join(request):
     return render(request, 'blog/dist/join.html', {})
 def log(request):
-
     return render(request, 'blog/dist/log.html', {})
+def infor(request):
+    return render(request, 'blog/dist/infor.html', {})
+
+def chaincode(request):
+      url = 'http://127.0.0.1:7050/chaincode'
+      payload = {
+        "jsonrpc": "2.0",
+        "method": "deploy",
+        "params": {
+          "type": 1,
+          "chaincodeID":{
+              "name": "mycc"
+          },
+          "input": {
+              "args":["init", "a", "100", "b", "200"]
+          }
+        },
+        "id": 1
+      }
+
+      headers = {'content-type': 'application/json'}
+      r = requests.post(url, data=json.dumps(payload), headers=headers)
+      json_load = json.loads(r.text)
+
+      return JsonResponse(json_load)
 
 def mem_join(request):
     con = sqlite3.connect("member.db")
     cursor = con.cursor()
 
-    url = 'http://127.0.0.1:8000/log'
+    url = 'http://127.0.0.1:8000/chaincode'
     r = requests.get(url)
     json_load = json.loads(r.text)
 

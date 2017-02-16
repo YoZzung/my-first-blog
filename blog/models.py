@@ -16,3 +16,11 @@ class Post(models.Model):
         self.save()
     def __str__(self):
             return self.title
+
+class PetsitUser(models.Model):
+    email = models.CharField(max_length=50, blank=True)
+    password = models.CharField(max_length=50, blank=True)
+    name = models.CharField(max_length=50, blank=True)
+    sex = models.CharField(max_length=10, blank=True)
+    birth = models.DateField(max_length=50, blank=True)
+    address = models.CharField(max_length=200)

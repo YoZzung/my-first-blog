@@ -77,7 +77,8 @@
             <h4>Welcome to <small>PetSitting</small></h4>
           </div>
 
-          <form action="../home2" method="GET">
+          <form action="{% url 'home2' %}" method="GET">
+          {% csrf_token %}
 
           <div class="login-form">
             <div class="form-group">
@@ -98,8 +99,8 @@
         </div>
       </div>
       <!-- post 했던 email pw 출력해보기-->
-      <p> email: <span id="e_mail"></span></p>
-      <p> password: <span id="pw"></span></p>
+      <!-- <p> email: <span id="e_mail"></span></p>
+      <p> password: <span id="pw"></span></p> -->
     </div>
 
 
